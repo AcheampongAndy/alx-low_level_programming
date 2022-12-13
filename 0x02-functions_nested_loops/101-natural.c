@@ -7,6 +7,7 @@
 int main(void)
 {
 	int num, sum;
+
 	sum = 0;
 	num = 0;
 
@@ -18,10 +19,7 @@ int main(void)
 		}
 		num++;
 	}
-	_putchar(sum / 100 + '0');
-	_putchar((sum / 10) % 10 + '0');
-	_putchar(sum % 10);
-	_putchar('\n');
+	printf("%d\n", sum);
 
 	return (0);
 }
