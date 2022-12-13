@@ -3,6 +3,6 @@
 int _putchar(char a)
 {
 	int res;
-	res = printf("%c", a);
+	res = putchar(a);
 	return(res);
 }
