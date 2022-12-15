@@ -9,7 +9,7 @@ void more_numbers(void)
 	int count, rep, num, lim;
 
 	lim = 9;
-	for (count = 0; count <= 10; count++)
+	for (count = 0; count < 10; count++)
 	{
 		lim = 9;
 		rep = 0;
