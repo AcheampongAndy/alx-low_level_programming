@@ -7,19 +7,30 @@
 */
 void puts_half(char *str)
 {
-	int half, num, max;
+	int half, num;
 
 	num = 0;
 	while (str[num] != '\0')
 	{
 		num++;
 	}
-	max = num;
-	half = num / 2;
-	while (half <= max)
+	if (num % 2 == 0)
 	{
-		_putchar(str[half]);
-		half++;
+		half = num / 2;
+		while (str[half] != '\0')
+		{
+			_putchar(str[half]);
+			half++;
+		}
+	}
+	else
+	{
+		half = (num - 1) / 2;
+		while (str[half] != '\0')
+		{
+			_putchar(str[half]);
+			half++;
+		}
 	}
 	_putchar('\n');
 }
