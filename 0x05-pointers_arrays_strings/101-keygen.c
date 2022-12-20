@@ -16,8 +16,8 @@ void randPassGen(int N)
 	num = 0;
 	srand((time(NULL) * (getpid())));
 	
-	char *number = "0123456789";
-	int number_len = strlen(number);
+	/*char *number = "0123456789";
+	int number_len = strlen(number);*/
 
 	char *alpha = "abcdefghijklmnopqrstuvwxyz";
 	int alpha_len = strlen(alpha);
@@ -36,7 +36,7 @@ void randPassGen(int N)
 		int random = rand() % 4;
 		if (random == 0)
 		{
-			password[num] = number[rand() % number_len];
+			password[num] = alpha[rand() % alpha_len];
 		}
 		else if (random == 1)
 		{
@@ -58,9 +58,8 @@ void randPassGen(int N)
 
 int main()
 {
-	int N = 10;
+	int N = 15;
 
-	// Function Call
 	randPassGen(N);
 
 	return 0;
