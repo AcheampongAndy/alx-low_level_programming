@@ -22,7 +22,7 @@ int _atoi(char *s)
 		/* take only numbers from 0 to 9 */
 		if (*(s + index) >= '0' && *(s + index) <= '9')
 		{
-			number = number * 10 + *(s + index) - '0';
+			number = number * 10 + (*(s + index) - 48);
 		}
 		index++;
 	}
