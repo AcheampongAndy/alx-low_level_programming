@@ -16,15 +16,15 @@ int main(void)
 	
 	random = 0;
 	count = 0;
-	for (count = 0; count < 2882; count = count + random)
+	for (count = 0; count < 2772; count = count + random)
 	{
-		random = rand() % 256;
-		if ((count + random) > 2882)
+		random = rand() % 128;
+		if ((count + random) > 2772)
 		{
 			break;
 		}
 		printf("%c", random);
 	}
-	printf("%c\n", (2882 - count));
+	printf("%c\n", (2772 - count));
 	return (0);
 }
