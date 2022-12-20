@@ -1,66 +1,30 @@
 #include <stdio.h>
-#include <unistd.h>
 #include <time.h>
 #include <stdlib.h>
-#include <string.h>
 /**
 * randPassGen - a function that generate random password
 * @num: the length of the password
 *
 * Return: void
 */
-void randPassGen(int N)
+int main(void)
 {
-	int num;
+	int random, count;
+	time_t clock;
 
-	num = 0;
-	srand((time(NULL) * (getpid())));
+	srand((unsigned int) time(&clock));
 	
-	/*char *number = "0123456789";
-	int number_len = strlen(number);*/
-
-	char *alpha = "abcdefghijklmnopqrstuvwxyz";
-	int alpha_len = strlen(alpha);
-
-	char *ALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	int ALPHA_len = strlen(ALPHA);
-
-	char *symbol = "!@#$%^&*><?|:~";
-	int symbol_len = strlen(symbol);
-
-	char *password = malloc(N + 1);
-	free(password);
-
-	while (num < N)
+	random = 0;
+	count = 0;
+	for (count = 0; count < 2882; count = count + random)
 	{
-		int random = rand() % 4;
-		if (random == 0)
+		random = rand() % 256;
+		if ((count + random) > 2882)
 		{
-			password[num] = alpha[rand() % alpha_len];
+			break;
 		}
-		else if (random == 1)
-		{
-			password[num] = alpha[rand() % alpha_len];
-		}
-		else if (random == 2)
-		{
-			password[num] = symbol[rand() % symbol_len];
-		}
-		else
-		{
-			password[num] = ALPHA[rand() % ALPHA_len];
-		}
-		num++;
+		printf("%c", random);
 	}
-	password[num] = '\0';
-	printf("Password: %s\n", password);
-}
-
-int main()
-{
-	int N = 15;
-
-	randPassGen(N);
-
-	return 0;
+	printf("%c\n", (2882 - count));
+	return (0);
 }
