@@ -1,7 +1,8 @@
 #include <stdio.h>
-#include <math.h>
+#include <unistd.h>
 #include <time.h>
 #include <stdlib.h>
+#include <string.h>
 /**
 * randPassGen - a function that generate random password
 * @num: the length of the password
@@ -10,52 +11,49 @@
 */
 void randPassGen(int N)
 {
-	int num, random;
+	int num;
 
 	num = 0;
-	random = 0;
-	srand((unsigned int)(time(NULL)));
+	srand((time(NULL) * (getpid())));
 	
-	char number[] = "0123456789";
+	char *number = "0123456789";
+	int number_len = strlen(number);
 
-	char alpha [] = "abcdefghijklmnopqrstuvwxyz";
+	char *alpha = "abcdefghijklmnopqrstuvwxyz";
+	int alpha_len = strlen(alpha);
 
-	char ALPHA [] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char *ALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	int ALPHA_len = strlen(ALPHA);
 
-	char symbol [] = "!@#$%^&*><?|:~";
+	char *symbol = "!@#$%^&*><?|:~";
+	int symbol_len = strlen(symbol);
 
-	char password[N];
+	char *password = malloc(N + 1);
+	free(password);
 
-	random = rand() % 4;
 	while (num < N)
 	{
-		if (random == 1)
+		int random = rand() % 4;
+		if (random == 0)
 		{
-			password[num] = number[rand() % 10];
-			random = rand() % 4;
-			printf("%c", password[num]);
+			password[num] = number[rand() % number_len];
+		}
+		else if (random == 1)
+		{
+			password[num] = alpha[rand() % alpha_len];
 		}
 		else if (random == 2)
 		{
-			password[num] = alpha[rand() % 26];
-			random = rand() % 4;
-			printf("%c", password[num]);
-		}
-		else if (random == 3)
-		{
-			password[num] = symbol[rand() % 14];
-			random = rand() % 4;
-			printf("%c", password[num]);
+			password[num] = symbol[rand() % symbol_len];
 		}
 		else
 		{
-			password[num] = ALPHA[rand() % 26];
-			random = rand() % 4;
-			printf("%c", password[num]);
+			password[num] = ALPHA[rand() % ALPHA_len];
 		}
 		num++;
 	}
-	printf("\n");
+	password[num] = '\0';
+	printf("Password: %s\n", password);
 }
 
 int main()
