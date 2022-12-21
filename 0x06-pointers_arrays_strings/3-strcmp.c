@@ -4,8 +4,7 @@
 * @s1: first string
 * @s2: second string
 *
-* Return: other a number when the 
-* stings are not equal but zero otherwize
+* Return: other a number when the stings are not equal but zero otherwize
 */
 int _strcmp(char *s1, char *s2)
 {
