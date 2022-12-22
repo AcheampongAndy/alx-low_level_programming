@@ -6,7 +6,7 @@
 * Return: u
 */
 char *cap_string(char *u)
-{	
+{
 	int num, num1;
 
 	int symbol[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
