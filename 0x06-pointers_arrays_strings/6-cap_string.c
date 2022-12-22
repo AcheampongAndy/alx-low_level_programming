@@ -24,13 +24,6 @@ char *cap_string(char *u)
 					if (u[num] == symbol[num1])
 					{
 						num++;
-						for (num1 = 0; symbol[num1] != '\0'; num1++)
-						{
-							if (u[num] == symbol[num1])
-							{
-								num++;
-							}
-						}
 					}
 					num1++;
 				}
