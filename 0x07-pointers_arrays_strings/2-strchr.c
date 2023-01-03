@@ -2,8 +2,8 @@
 #define NULL 0
 /**
 * *_strchr - ocates a character in a string
-* @*s: the string array
-* @*c: located strings
+* @s: the string array
+* @c: located strings
 * Return: c
 */
 char *_strchr(char *s, char c)
