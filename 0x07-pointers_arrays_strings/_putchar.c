@@ -7,5 +7,3 @@ int _putchar(char c)
 	a = putchar(c);
 	return (a);
 }
-Footer
-
