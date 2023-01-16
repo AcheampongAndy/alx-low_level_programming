@@ -1,8 +1,7 @@
 #include <stdio.h>
 /**
-*main -  a program that prints the name of the file
-*
-* Return 0
+* main -  a program that prints the name of the file
+* Return: 0
 */
 int main()
 {
