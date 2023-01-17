@@ -6,11 +6,11 @@
 * @strg: the string
 * Return: a pointer
 */
-char newStr(*strg)
+char *newStr(char *strg)
 {
 	int x, y;
 
-	char *str
+	char *str;
 
 	if (strg == NULL)
 		return (NULL);
@@ -18,7 +18,7 @@ char newStr(*strg)
 	for (x = 0; strg[x] != '\0'; x++)
 		;
 
-	str = malloc(sizeof(char) * x + 1);
+	str = (char*) malloc(x * sizeof(char) + 1);
 
 	if (str == NULL)
 		return (NULL);
@@ -39,7 +39,7 @@ char newStr(*strg)
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *dog;
-	char *dname, downer;
+	char *dname, *downer;
 
 	dog = malloc(sizeof(dog_t));
 	if (dog == NULL)
@@ -52,7 +52,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	downer = newStr(downer);
+	downer = newStr(owner);
 	if (downer == NULL)
 	{
 		free(dog);
@@ -60,8 +60,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	dog.name = dname;
-	dog.age = age;
-	dog.owner = downer;
+	dog->name = dname;
+	dog->age = age;
+	dog->owner = downer;
 	return (dog);
 }
