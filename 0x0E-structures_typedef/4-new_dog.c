@@ -18,7 +18,7 @@ char *newStr(char *strg)
 	for (x = 0; strg[x] != '\0'; x++)
 		;
 
-	str = (char*) malloc(x * sizeof(char) + 1);
+	str = (char *) malloc(x * sizeof(char) + 1);
 
 	if (str == NULL)
 		return (NULL);
