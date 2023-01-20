@@ -8,29 +8,35 @@
  * @argv: array of arguments
  * Return: 0 (Always)
  */
-
 int main(int argc, char *argv[])
 {
-	int x, y, r;
-	int (*op)(int, int);
 
-	if (argc != 4)
-	{
-		printf("Error\n");
-		exit(98);
-	}
+if (argc != 4)
+{
+printf("Error\n");
+exit(98);
+}
 
-	op = get_op_func(argv[2]);
-	if (op == NULL)
-	{
-		printf("Error\n");
-		exit(99);
-	}
-	x = atoi(argv[1]);
-	y = atoi(argv[3]);
-	r = op(x, y);
+if (
+(strcmp(argv[2], "+") &&
+strcmp(argv[2], "-") &&
+strcmp(argv[2], "*") &&
+strcmp(argv[2], "/") &&
+strcmp(argv[2], "%"))
+)
+{
+printf("Error\n");
+exit(99);
+}
 
-	printf("%d\n", r);
+if ((strcmp(argv[2], "/") == 0 || strcmp(argv[2], "%") == 0)
+&& atoi(argv[3]) == 0)
+{
+printf("Error\n");
+exit(100);
+}
 
-	return (0);
+printf("%d\n", (*get_op_func(argv[2]))(atoi(argv[1]), atoi(argv[3])));
+
+return (0);
 }
