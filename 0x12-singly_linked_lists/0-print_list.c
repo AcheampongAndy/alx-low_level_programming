@@ -5,7 +5,6 @@
  * @h: head of linked list
  * Return: number of elements
  */
-
 size_t print_list(const list_t *h)
 {
 	size_t string;
