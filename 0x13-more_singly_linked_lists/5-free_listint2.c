@@ -4,12 +4,13 @@
  * @head: head of linked list
  * Return: void
  */
-void free_listint2(listint_t **head);
+void free_listint2(listint_t **head)
 {
 	listint_t *new;
 
-	if (*head == NULL)
+	if (head == NULL)
 		return;
+
 	new = *head;
 	while (new != NULL)
 	{
