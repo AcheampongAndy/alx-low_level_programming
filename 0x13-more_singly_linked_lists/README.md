@@ -10,3 +10,5 @@
 9. Write a function that inserts a new node at a given positioni.
 10. Write a function that deletes the node at index index of a listint_t linked list.
 11. Write a function that reverses a listint_t linked list.
+12. Write a function that prints a listint_t linked list.
+13. Write a function that frees a listint_t list.
