@@ -12,11 +12,12 @@ void print_binary(unsigned long int n)
 	unsigned long int x;
 
 	y = 0;
+	x = 0;
 	for (i = 63; i >= 0; i--)
 	{
 		y = (n >> i) & 1;
 		if (x == 1)
-			on = 1;
+			y = 1;
 		if (y == 1)
 			_putchar(((n >> i) & 1) + '0');
 	}
