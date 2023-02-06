@@ -40,7 +40,7 @@ int create_file(const char *filename, char *text_content)
 	else
 		len = _strlen(text_content);
 
-	bytes_w = writes(fd, text_content, len);
+	bytes_w = write(fd, text_content, len);
 	if (bytes_w == -1)
 		return (-1);
 
