@@ -8,4 +8,5 @@
 7.  Write a function that inserts a new node at a given position.
 8. Write a function that deletes the node at index index of a dlistint_t linked list.
 9. Find the password for crackme4.
-10.  
+10.  A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+11. Write a keygen for crackme5. 
